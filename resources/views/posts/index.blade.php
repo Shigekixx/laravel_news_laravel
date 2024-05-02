@@ -11,22 +11,23 @@
 <body>
     <h1><a href="{{ route('posts.index') }}">Laravel News</a></h1> {{-- index.blade.phpへのリンク --}}
     <br>
+
     <!-- 直前投稿エリア -->
-    @isset($title, $news)
+    @isset($title, $message)
     <h2>{{ $title }}タイトル</h2>
-    {{ $news }}
+    {{ $message }}
     <br><hr>
     @endisset
 
-    <form action="/posts" method="POST">
+    <form action="/" method="POST">
         @csrf
         <div>
             <label for = "title" >タイトル</label>
             <input type="text" id="title" name = "title">
         </div>
         <div>
-            <label for = "news" >本文</label>
-            <input type="text" id="news" name="news">
+            <label for = "message" >本文</label>
+            <input type="text" id="message" name="message">
         </div>
         <button type="submit" > 投稿 </button>
     </form>

@@ -13,16 +13,16 @@ class PostsController extends Controller
         return view('posts.index', ['posts' => $posts]); // views/posts/index.blade.php を表示する
     }
     
-    public function news(Request $request)
+    public function message(Request $request)
     {
         // 投稿内容を受け取って変数に入れる
         $title = $request->input('title');
-        $news = $request->input('news');
+        $message = $request->input('message');
 
         // 変数をビューに渡す
         return view('posts.index')->with([
             "title" => $title,
-            "news"  => $news,
+            "message"  => $message,
         ]);
     }
 }
